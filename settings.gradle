@@ -1,0 +1,2 @@
+rootProject.name = "VIP Text Scanner"
+include ':app'
