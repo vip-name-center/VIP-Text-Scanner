@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vip.textscanner">
+
+    <!-- পারমিশন সমূহ -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_vip_logo"
+        android:label="VIP Text Scanner"
+        android:roundIcon="@drawable/ic_vip_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!-- প্রধান ড্যাশবোর্ড স্ক্রিন -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ওভারলে স্ক্যানার স্ক্রিন (স্বচ্ছ ব্যাকগ্রাউন্ড) -->
+        <activity
+            android:name=".OverlayScannerActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:exported="false" />
+
+        <!-- ভাসমান বাবলের জন্য ব্যাকগ্রাউন্ড সার্ভিস -->
+        <service
+            android:name=".FloatingService"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
+</manifest>
